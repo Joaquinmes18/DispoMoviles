@@ -1,5 +1,7 @@
 package com.calyrsoft.ucbp1.di
 
+import com.calyrsoft.ucbp1.features.github.data.api.GithubService
+import com.calyrsoft.ucbp1.features.github.data.datasource.GithubRemoteDataSource
 import com.calyrsoft.ucbp1.features.github.data.repository.GithubRepository
 import com.calyrsoft.ucbp1.features.github.domain.repository.IGithubRepository
 import com.calyrsoft.ucbp1.features.github.domain.usecase.FindByNickNameUseCase
@@ -9,11 +11,38 @@ import com.calyrsoft.ucbp1.features.login.domain.repository.ILoginRepository
 import com.calyrsoft.ucbp1.features.login.domain.usecase.LoginUseCase
 import com.calyrsoft.ucbp1.features.login.domain.usecase.RecoverPasswordUseCase
 import com.calyrsoft.ucbp1.features.login.presentation.LoginViewModel
+import okhttp3.OkHttpClient
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 val appModule = module {
-    single<IGithubRepository>{ GithubRepository() }
+    single {
+        OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build()
+    }
+
+
+    // Retrofit
+    single {
+        Retrofit.Builder()
+            .baseUrl("https://api.github.com/")
+            .client(get())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+
+    // GithubService
+    single<GithubService> {
+        get<Retrofit>().create(GithubService::class.java)
+    }
+
     factory { FindByNickNameUseCase(get()) }
     viewModel { GithubViewModel(get()) }
 
