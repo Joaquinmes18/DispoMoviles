@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880204076929",
+    "project_id": "ucbp1-davidzema",
+    "storage_bucket": "ucbp1-davidzema.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880204076929:android:2751722d8d782f4eddba80",
+        "android_client_info": {
+          "package_name": "com.calyrsoft.ucbp1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgfgOpZNZQGwZphIzJOLZuydBMXH_DE3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

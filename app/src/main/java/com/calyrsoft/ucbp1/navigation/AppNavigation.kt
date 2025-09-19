@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.calyrsoft.ucbp1.features.dollar.presentation.DollarScreen
 import com.calyrsoft.ucbp1.features.login.presentation.ForgotPasswordScreen
 import com.calyrsoft.ucbp1.features.login.presentation.LoginScreen
 
@@ -15,7 +16,7 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Login.route
+        startDestination = Screen.Dollar.route
     ) {
         composable(Screen.Login.route) {
             LoginScreen(
@@ -27,10 +28,12 @@ fun AppNavigation() {
             )
         }
         composable(Screen.Home.route) {
-
         }
         composable(Screen.Forgot.route) {
             ForgotPasswordScreen {  }
+        }
+        composable(Screen.Dollar.route) {
+            DollarScreen()
         }
     }
 }

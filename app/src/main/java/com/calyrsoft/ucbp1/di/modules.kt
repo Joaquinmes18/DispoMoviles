@@ -1,5 +1,10 @@
 package com.calyrsoft.ucbp1.di
 
+import com.calyrsoft.ucbp1.features.dollar.data.repository.DollarRepository
+import com.calyrsoft.ucbp1.features.dollar.data.source.RealTimeRemoteDataSource
+import com.calyrsoft.ucbp1.features.dollar.domain.repository.IDollarRepository
+import com.calyrsoft.ucbp1.features.dollar.domain.usecase.FetchDollarUseCase
+import com.calyrsoft.ucbp1.features.dollar.presentation.DollarViewModel
 import com.calyrsoft.ucbp1.features.github.data.api.GithubService
 import com.calyrsoft.ucbp1.features.github.data.datasource.GithubRemoteDataSource
 import com.calyrsoft.ucbp1.features.github.data.repository.GithubRepository
@@ -37,6 +42,16 @@ val appModule = module {
             .build()
     }
 
+    single { RealTimeRemoteDataSource() }
+
+// Repository
+    single<IDollarRepository> { DollarRepository(get()) }
+
+// Use case
+    factory { FetchDollarUseCase(get()) }
+
+// ViewModel
+    viewModel { DollarViewModel(get()) }
 
     // GithubService
     single<GithubService> {
