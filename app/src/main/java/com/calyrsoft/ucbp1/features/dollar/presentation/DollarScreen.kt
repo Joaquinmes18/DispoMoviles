@@ -27,6 +27,8 @@ fun DollarScreen(viewModelDollar: DollarViewModel = koinViewModel()) {
                 Text(stateValue.data.dollarParallel!!)
                 Text(stateValue.data.dollarUsdt!!)
                 Text(stateValue.data.dollarUsdc!!)
+
+                Text("Actualizado: ${java.util.Date(stateValue.data.updatedAt)}")
             }
         }
     }
