@@ -3,6 +3,7 @@ package com.calyrsoft.ucbp1.features.github.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calyrsoft.ucbp1.features.github.domain.model.UserModel
+import com.calyrsoft.ucbp1.features.github.domain.model.vo.Nickname
 import com.calyrsoft.ucbp1.features.github.domain.usecase.FindByNickNameUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,7 +25,7 @@ class GithubViewModel(
 
     val state : StateFlow<GithubStateUI> = _state.asStateFlow()
 
-    fun fetchAlias(nickname: String) {
+    fun fetchAlias(nickname: Nickname) {
         viewModelScope.launch(Dispatchers.IO) {
             _state.value = GithubStateUI.Loading
             val result = usecase.invoke(nickname)

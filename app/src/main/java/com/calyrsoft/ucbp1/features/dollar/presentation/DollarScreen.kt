@@ -25,6 +25,8 @@ fun DollarScreen(viewModelDollar: DollarViewModel = koinViewModel()) {
             is DollarViewModel.DollarUIState.Success -> {
                 Text(stateValue.data.dollarOfficial!!)
                 Text(stateValue.data.dollarParallel!!)
+                Text(stateValue.data.dollarUsdt!!)
+                Text(stateValue.data.dollarUsdc!!)
             }
         }
     }

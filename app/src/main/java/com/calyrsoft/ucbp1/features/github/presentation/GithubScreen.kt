@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.calyrsoft.ucbp1.features.github.domain.model.vo.Nickname
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -35,7 +36,7 @@ fun GithubScreen( modifier: Modifier,
             }
         )
         OutlinedButton( onClick = {
-            vm.fetchAlias(nickname)
+            vm.fetchAlias(Nickname(nickname.trim()))
         }) {
             Text("")
         }
@@ -50,14 +51,15 @@ fun GithubScreen( modifier: Modifier,
                 Text("Loading" )
             }
             is GithubViewModel.GithubStateUI.Success -> {
-                Text(st.github.nickname )
+                val nickname = st.github.nickname.value
+                Text(nickname)
                 AsyncImage(
                     model = st.github.pathUrl,
                     contentDescription = null,
                     modifier = Modifier.size(100.dp),
                     contentScale = ContentScale.Crop,
                 )
-                Text(st.github.pathUrl)
+                Text(st.github.pathUrl.value)
             }
         }
     }
