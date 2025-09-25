@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.presentation
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.presentation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.size

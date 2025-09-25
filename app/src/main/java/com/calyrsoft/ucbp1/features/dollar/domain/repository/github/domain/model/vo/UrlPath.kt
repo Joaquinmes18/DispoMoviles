@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.domain.model.vo
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.domain.model.vo
 
 @JvmInline
 value class UrlPath(val value:String){

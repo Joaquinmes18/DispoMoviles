@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.data.datasource
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.data.datasource
 
 import com.calyrsoft.ucbp1.features.github.data.api.GithubService
 import com.calyrsoft.ucbp1.features.github.data.api.dto.GithubDto

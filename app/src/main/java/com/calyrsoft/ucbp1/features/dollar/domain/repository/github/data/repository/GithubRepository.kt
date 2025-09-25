@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.data.repository
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.data.repository
 
 import com.calyrsoft.ucbp1.features.github.data.datasource.GithubRemoteDataSource
 import com.calyrsoft.ucbp1.features.github.domain.model.UserModel

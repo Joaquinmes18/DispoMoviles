@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.domain.model
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.domain.model
 
 import com.calyrsoft.ucbp1.features.github.domain.model.vo.Nickname
 import com.calyrsoft.ucbp1.features.github.domain.model.vo.UrlPath

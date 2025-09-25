@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.presentation
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

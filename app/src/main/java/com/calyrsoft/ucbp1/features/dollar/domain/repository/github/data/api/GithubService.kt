@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.github.data.api
+package com.calyrsoft.ucbp1.features.dollar.domain.repository.github.data.api
 
 import com.calyrsoft.ucbp1.features.github.data.api.dto.GithubDto
 import com.calyrsoft.ucbp1.features.github.domain.model.vo.Nickname
