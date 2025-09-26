@@ -1,4 +1,7 @@
-package com.calyrsoft.ucbp1.features.profile.repository
+package com.calyrsoft.ucbp1.features.profile.domain.repository
 
-class IProfileRepository {
+import com.calyrsoft.ucbp1.features.profile.domain.model.ProfileModel
+
+interface IProfileRepository {
+    fun fetchData(): Result<ProfileModel>
 }

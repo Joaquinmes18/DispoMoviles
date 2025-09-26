@@ -4,7 +4,7 @@ import com.calyrsoft.ucbp1.features.profile.domain.model.vo.UrlPath
 import org.junit.Assert.*
 import org.junit.Test
 
-class UrlPathTest {
+class UrlPathValueObjectTest {
 
     @Test fun `valid https url`() {
         val r = UrlPath.of("https://example.com/image.png")
